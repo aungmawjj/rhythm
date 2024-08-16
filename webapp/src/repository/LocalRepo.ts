@@ -70,19 +70,11 @@ function getRoutineRecords(
   end: number
 ): Promise<RoutineRecord[]> {
   return withDB(async (db) => {
-    const tx = db.transaction(StoreRoutineRecord);
-
-    const iterator = tx.store
-      .index(IndexUserIdDateTime)
-      .iterate(IDBKeyRange.bound([userId, start], [userId, end]));
-
-    const routineRecords: RoutineRecord[] = [];
-    for await (const cursor of iterator) {
-      routineRecords.push(cursor.value);
-    }
-
-    await tx.done;
-    return routineRecords;
+    return db.getAllFromIndex(
+      StoreRoutineRecord,
+      IndexUserIdDateTime,
+      IDBKeyRange.bound([userId, start], [userId, end])
+    );
   });
 }
 
