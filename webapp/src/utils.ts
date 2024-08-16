@@ -1,4 +1,5 @@
 // Return dates of months grouped by weeks in 2D array.
+// A week starts with Sunday and ends with Saturday.
 // First and last weeks include dates from previous and next months.
 function weeksOfMonth(year: number, month: number): Date[][] {
   const firstDate = new Date(year, month, 1);
@@ -28,4 +29,4 @@ function weeksOfMonth(year: number, month: number): Date[][] {
   return weeks;
 }
 
-export default weeksOfMonth;
+export { weeksOfMonth };

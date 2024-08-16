@@ -6,19 +6,21 @@ type User = {
 
 type Routine = {
   Id: string;
+  UserId: string;
   Name: string;
-  When: string;
-  Note: string;
+  OClock?: number;
+  Note?: string;
+  LastUpdate: number;
 };
 
 type RoutineRecord = {
   Id: string;
-  Timestamp: number;
   UserId: string;
+  DateTime: number;
   RoutineId: string;
   RoutineName: string;
-  When: string;
-  Note: string;
+  Note?: string;
+  Timestamp: number;
 };
 
 export { type Routine, type RoutineRecord, type User };

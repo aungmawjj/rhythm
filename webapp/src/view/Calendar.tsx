@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import weeksOfMonth from './weeksOfMonth';
+import { weeksOfMonth } from '../utils';
 
 const daysOfWeeks = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const monthNames = [
