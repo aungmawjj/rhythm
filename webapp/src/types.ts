@@ -18,7 +18,6 @@ type RoutineRecord = {
   UserId: string;
   DateTime: number;
   RoutineId: string;
-  RoutineName: string;
   Note?: string;
   Timestamp: number;
 };
